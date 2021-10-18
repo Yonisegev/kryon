@@ -24,4 +24,9 @@
             margin-left: 5px;
         }
     }
+
+    @media (max-width: 480px) {
+        width: 98%;
+        height: 140px;
+    }
 }
