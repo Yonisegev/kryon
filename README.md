@@ -2,8 +2,11 @@
 
 Technologies used:
 Angular
+
 NGRX
+
 SCSS
+
 
 ## What i've learned:
 NGRX from scratch (I do know flux and redux)
