@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "id": "36a42385-9d50-4811-8247-7da72a3dfa70",
-      "userName": "Felicity.Labadie23",
-      "fullName": "Dr. Jazmin Fisher",
-      "gender": "female",
-      "age": 19,
-      "jobTitle": "Customer Integration Facilitator",
-      "color": "#552217"
-    },
-    {
       "id": "b9747553-f4a4-4e01-98ac-3e7c62252525",
       "userName": "Kendra_Towne",
       "fullName": "Floyd Cassin",
