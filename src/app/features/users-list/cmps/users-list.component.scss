@@ -1,0 +1,31 @@
+.users-list-container {
+    padding: 20px 0;
+    margin: 0 auto;
+    height: 100vh;
+    overflow-y: hidden;
+    max-width: 720px;
+    .search {
+        margin-bottom: 5px;
+        background-image: url('../../../../assets/images/search-solid.svg');
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        padding: 10px 15px 10px 5px;
+        outline: none;
+        border: none;
+    }
+    .user-list {
+        overflow-y: scroll;
+        height: 100%;
+
+        li {
+            &:not(:last-of-type) {
+                border-bottom: 1px solid rgba(rgb(0, 0, 0), 0.12);
+            }
+            &:first-of-type {
+                border-top: 1px solid rgba(rgb(0, 0, 0), 0.12);
+            }
+        }
+    }
+
+}

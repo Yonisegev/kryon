@@ -1,0 +1,23 @@
+@import "./assets/styles/main.scss";
+$fa-font-path: "../../font-awesome/fonts";
+
+body {
+  font-family: helvetica;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  opacity: 1;
+  background-color: #e6e6e6;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: transparent;
+}
