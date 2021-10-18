@@ -1,0 +1,27 @@
+<article *ngIf="user$ | async as user" class="user-details flex align-center">
+    <div class="user-avatar">
+        <img [src]="getUserAvatar(user)" alt="">
+    </div>
+    <div class="user-info flex column">
+        <div class="row">
+            <h4>Full name</h4>
+            <p>{{user.fullName}}</p>
+        </div>
+        <div class="row">
+            <h4>Username</h4>
+            <p>{{user.userName}}</p>
+        </div>
+        <div class="row">
+            <h4>Age</h4>
+            <p>{{user.age}}</p>
+        </div>
+        <div class="row">
+            <h4>Gender</h4>
+            <p>{{user.gender}}</p>
+        </div>
+        <div class="row">
+            <h4>Job Title</h4>
+            <p>{{user.jobTitle}}</p>
+        </div>
+    </div>
+</article>

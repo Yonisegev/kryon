@@ -11,6 +11,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './state/user.effects';
 import { HoverColorDirective } from './directives/hover-color.directive';
 import { UserFilterComponent } from './cmps/user-filter/user-filter.component';
+import { UserDetailsComponent } from './cmps/user-details/user-details.component';
+import { ConfirmModalComponent } from './cmps/confirm-modal/confirm-modal.component';
+import { ModalOutsideClickDirective } from './directives/modal-outside-click.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { UserFilterComponent } from './cmps/user-filter/user-filter.component';
     UsersShellComponent,
     UserPreviewComponent,
     HoverColorDirective,
-    UserFilterComponent
+    UserFilterComponent,
+    UserDetailsComponent,
+    ConfirmModalComponent,
+    ModalOutsideClickDirective
   ],
   imports: [
     UsersListRoutingModule,

@@ -1,0 +1,20 @@
+.user-details {
+    height: 250px;
+    .user-avatar {
+        flex-grow: 1;
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+    .user-info {
+        flex-basis: 30%;
+
+       .row {
+           &:not(:last-of-type) {
+               margin-bottom: 5px;
+           }
+       }
+    }
+}

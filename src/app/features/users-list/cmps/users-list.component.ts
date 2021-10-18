@@ -12,11 +12,17 @@ export class UsersListComponent implements OnInit {
   constructor() {}
 
   @Input() users: User[] | undefined;
+  @Input() currentUserId: string | undefined | null
   @Output() deleteUser = new EventEmitter<string>()
+  @Output() infoToggled = new EventEmitter()
   ngOnInit(): void {
   }
 
   onDeleteUser(userId: string) {
     this.deleteUser.emit(userId) // Keep this component a presentational component
+  }
+
+  onInfoToggle(userId: string) {
+    this.infoToggled.emit(userId)
   }
 }

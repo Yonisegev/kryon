@@ -1,3 +1,11 @@
-<ng-container *ngIf="users$ | async as users">
-    <users-list (deleteUser)="onDeleteUser($event)" [users]="users"></users-list>
+<ng-container *ngIf="(users$ | async) as users">
+    <users-list *ngIf="users.length" (infoToggled)="onInfoToggled($event)" (deleteUser)="onDeleteUser($event)"
+        [users]="users" [currentUserId]="currentUserId$ | async"></users-list>
+</ng-container>
+<ng-container *ngIf="errorMessage$ | async as errorMessage">
+    <p class="error flex justify-center">Error: {{errorMessage}}</p>
+</ng-container>
+<ng-container *ngIf="isConfirmModalOpen">
+    <confirm-modal modalOutsideClick [isModalOpen]="isConfirmModalOpen" (onOutsideClick)="isConfirmModalOpen = false"
+        (modalButtonClicked)="onModalAction($event)"></confirm-modal>
 </ng-container>

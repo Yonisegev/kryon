@@ -1,4 +1,11 @@
 <section class="filter">
-    <input [ngModel]="searchInput" (ngModelChange)="onInputChange($event)" type="search" class="search" name="search"
-        placeholder="Search users">
+    <input [ngModel]="searchInput"
+    (ngModelChange)="onInputChange($event)"
+    type="search"
+    class="search"
+    name="search"
+    placeholder="Search users"
+    autocomplete="off"
+    autofocus="true"
+    >
 </section>

@@ -13,7 +13,9 @@ export class UserPreviewComponent implements OnInit {
   constructor() { }
 
   @Input() user: User | undefined
+  @Input() currentUserId: string | undefined | null
   @Output() deleteUser = new EventEmitter<string>()
+  @Output() infoToggled = new EventEmitter<string>()
   ngOnInit(): void {
   }
 
@@ -25,6 +27,10 @@ export class UserPreviewComponent implements OnInit {
 
   onDeleteUser() {
     this.deleteUser.emit(this.user?.id) // Keep this component a presentational component
+  }
+
+  onToggleInfo() {
+    this.infoToggled.emit(this.user?.id)
   }
 
 }

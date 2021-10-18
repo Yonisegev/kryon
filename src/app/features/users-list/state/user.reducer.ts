@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { User } from "../models/user";
-import { UserApiActions } from "./actions";
+import { UserApiActions, UserPageActions } from "./actions";
 
 export interface UserState {
     users: User[]
@@ -42,5 +42,11 @@ export const userReducer = createReducer<UserState>(
             error: action.error
         }
     }),
+    on(UserPageActions.setCurrentUserId, (state, action): UserState => {
+        return {
+            ...state,
+            currentUserId: action.userId
+        }
+    })
 
 )
