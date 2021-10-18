@@ -1,9 +1,14 @@
 <main class="users-list-container flex column">
-    <user-filter></user-filter>
+    <!-- <user-filter></user-filter> -->
     <ul class="user-list">
         <li *ngFor="let user of users" hoverColor [userColor]="user.color">
-            <user-preview (infoToggled)="onInfoToggle($event)" (deleteUser)="onDeleteUser($event)" [user]="user"
-                [currentUserId]="currentUserId"></user-preview>
+            <user-preview 
+            (infoToggled)="onInfoToggle($event)"
+            (deleteUser)="onDeleteUser($event)"
+            [user]="user"
+            [searchValue]="searchValue"
+            [currentUserId]="currentUserId"
+                ></user-preview>
             <router-outlet *ngIf="currentUserId===user.id"></router-outlet>
         </li>
     </ul>

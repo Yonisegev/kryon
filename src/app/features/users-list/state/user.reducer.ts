@@ -6,12 +6,14 @@ export interface UserState {
     users: User[]
     currentUserId: string,
     error: string,
+    searchValue: string
 }
 
 const initialState: UserState = {
     users: [],
     currentUserId: '',
-    error: ''
+    error: '',
+    searchValue: ''
 }
 
 export const userReducer = createReducer<UserState>(
@@ -46,6 +48,12 @@ export const userReducer = createReducer<UserState>(
         return {
             ...state,
             currentUserId: action.userId
+        }
+    }),
+    on(UserPageActions.setSearchValue, (state, action): UserState => {
+        return {
+            ...state,
+            searchValue: action.searchValue
         }
     })
 

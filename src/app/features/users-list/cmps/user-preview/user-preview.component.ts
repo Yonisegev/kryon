@@ -14,6 +14,7 @@ export class UserPreviewComponent implements OnInit {
 
   @Input() user: User | undefined
   @Input() currentUserId: string | undefined | null
+  @Input() searchValue: string | undefined | null
   @Output() deleteUser = new EventEmitter<string>()
   @Output() infoToggled = new EventEmitter<string>()
   ngOnInit(): void {

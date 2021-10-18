@@ -1,8 +1,18 @@
+::host {
+
+}
+.filter {
+    max-width: 720px;
+    padding: 20px 0;
+    padding-bottom: 0;
+    margin: 0 auto;
+    margin-bottom: 0;
+}
 .search {
     width: 100%;
     margin-bottom: 5px;
     padding: 10px 15px 10px 5px;
-    background-image: url('../../../../../assets/images/search-solid.svg');
+    background-image: url("../../../../../assets/images/search-solid.svg");
     background-position: right center;
     background-repeat: no-repeat;
     background-size: 20px;

@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { User } from '../../models/user';
-import { getCurrentUserId, getErrorMsg, getUsers } from '../../state';
+import { getCurrentUserId, getErrorMsg, getSearchValue, getUsers } from '../../state';
 import { UserPageActions } from '../../state/actions';
 
 @Component({
@@ -18,6 +18,7 @@ export class UsersShellComponent implements OnInit {
   currentUserId$: Observable<string> | undefined;
   isConfirmModalOpen: boolean = false;
   userIdToDelete: string = ''
+  searchValue$: Observable<string> | undefined;
 
   constructor(private store: Store, private router: Router) { }
 
@@ -29,6 +30,7 @@ export class UsersShellComponent implements OnInit {
     this.users$ = this.store.select(getUsers)
     this.errorMessage$ = this.store.select(getErrorMsg)
     this.currentUserId$ = this.store.select(getCurrentUserId)
+    this.searchValue$ = this.store.select(getSearchValue)
     this.store.dispatch(UserPageActions.loadUsers({}))
   }
 

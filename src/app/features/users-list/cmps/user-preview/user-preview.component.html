@@ -1,8 +1,10 @@
 <div *ngIf="user" class="user-preview flex align-center">
-    <p class="user-info">{{user.fullName}} - {{user.age}} ({{userFiboAge}})</p>
+    <p innerHTML="{{user.fullName | highlight : searchValue }} - {{user.age}} ({{userFiboAge}})" class="user-info"></p>
     <div class="actions">
         <i (click)="onDeleteUser()" class="delete-icon"><img src="../../../../../assets/images/trash-alt-solid.svg"></i>
-        <i *ngIf="currentUserId === user.id" (click)="onToggleInfo()" [routerLink]="['/']" class="info-icon"><img src="../../../../../assets/images/minus-solid.svg"></i>
-        <i *ngIf="currentUserId !== user.id" (click)="onToggleInfo()" [routerLink]="[user.id]" class="info-icon"><img src="../../../../../assets/images/plus-solid.svg"></i>
+        <i *ngIf="currentUserId === user.id" (click)="onToggleInfo()" [routerLink]="['/']" class="info-icon"><img
+                src="../../../../../assets/images/minus-solid.svg"></i>
+        <i *ngIf="currentUserId !== user.id" (click)="onToggleInfo()" [routerLink]="[user.id]" class="info-icon"><img
+                src="../../../../../assets/images/plus-solid.svg"></i>
     </div>
 </div>

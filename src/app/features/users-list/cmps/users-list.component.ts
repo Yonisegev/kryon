@@ -13,6 +13,7 @@ export class UsersListComponent implements OnInit {
 
   @Input() users: User[] | undefined;
   @Input() currentUserId: string | undefined | null
+  @Input() searchValue: string | undefined | null
   @Output() deleteUser = new EventEmitter<string>()
   @Output() infoToggled = new EventEmitter()
   ngOnInit(): void {

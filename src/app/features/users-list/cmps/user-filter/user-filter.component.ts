@@ -19,6 +19,7 @@ export class UserFilterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.inputSub = this.searchInputChanged.pipe(debounceTime(500), distinctUntilChanged()).subscribe(txt => {
       this.store.dispatch(UserPageActions.loadUsers({ searchText: txt }))
+      this.store.dispatch(UserPageActions.setSearchValue({searchValue: txt}))
     })
   }
 

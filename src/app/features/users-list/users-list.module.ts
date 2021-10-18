@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {UsersListComponent} from './cmps/users-list.component';
-import {UsersListRoutingModule} from './users-list-routing.module';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { UsersListComponent } from './cmps/users-list.component';
+import { UsersListRoutingModule } from './users-list-routing.module';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { UsersShellComponent } from './pages/users-shell/users-shell.component';
 import { UserPreviewComponent } from './cmps/user-preview/user-preview.component';
 import { StoreModule } from '@ngrx/store';
@@ -14,6 +14,7 @@ import { UserFilterComponent } from './cmps/user-filter/user-filter.component';
 import { UserDetailsComponent } from './cmps/user-details/user-details.component';
 import { ConfirmModalComponent } from './cmps/confirm-modal/confirm-modal.component';
 import { ModalOutsideClickDirective } from './directives/modal-outside-click.directive';
+import { HighlightPipe } from './pipes/highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ModalOutsideClickDirective } from './directives/modal-outside-click.dir
     UserFilterComponent,
     UserDetailsComponent,
     ConfirmModalComponent,
-    ModalOutsideClickDirective
+    ModalOutsideClickDirective,
+    HighlightPipe,
   ],
   imports: [
     UsersListRoutingModule,

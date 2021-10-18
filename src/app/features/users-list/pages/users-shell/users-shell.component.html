@@ -1,6 +1,15 @@
+<user-filter></user-filter>
+
 <ng-container *ngIf="(users$ | async) as users">
-    <users-list *ngIf="users.length" (infoToggled)="onInfoToggled($event)" (deleteUser)="onDeleteUser($event)"
-        [users]="users" [currentUserId]="currentUserId$ | async"></users-list>
+    <users-list 
+    *ngIf="users.length" 
+    (infoToggled)="onInfoToggled($event)" 
+    (deleteUser)="onDeleteUser($event)"
+    [users]="users"
+    [searchValue]="searchValue$ | async"
+    [currentUserId]="currentUserId$ | async"
+        
+        ></users-list>
 </ng-container>
 <ng-container *ngIf="errorMessage$ | async as errorMessage">
     <p class="error flex justify-center">Error: {{errorMessage}}</p>
