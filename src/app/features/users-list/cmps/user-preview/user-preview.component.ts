@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../models/user';
+import { fibonacci } from '../../fibonacci'
 
 @Component({
   selector: 'user-preview',
@@ -12,6 +13,12 @@ export class UserPreviewComponent implements OnInit {
 
   @Input() user: User | undefined
   ngOnInit(): void {
+  }
+
+  get userFiboAge() {
+    if (this.user) {
+      return fibonacci(this.user.age)
+    } else return ''
   }
 
 }

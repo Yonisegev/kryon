@@ -5,6 +5,10 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import { UsersShellComponent } from './pages/users-shell/users-shell.component';
 import { UserPreviewComponent } from './cmps/user-preview/user-preview.component';
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './state/user.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './state/user.effects';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,9 @@ import { UserPreviewComponent } from './cmps/user-preview/user-preview.component
   imports: [
     UsersListRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forFeature('users', userReducer),
+    EffectsModule.forFeature([UserEffects])
   ],
   providers: []
 })
