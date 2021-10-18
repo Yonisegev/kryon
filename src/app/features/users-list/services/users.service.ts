@@ -39,8 +39,6 @@ export class UsersService {
       )
   }
 
-
-
   private handleError(err: any) {
     let errorMessage: string = 'Something went wrong. Please try again.'
     console.error(err);
