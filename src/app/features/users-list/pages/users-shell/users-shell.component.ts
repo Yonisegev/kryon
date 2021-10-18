@@ -15,7 +15,7 @@ export class UsersShellComponent implements OnInit {
   users$: Observable<User[]> | undefined;
   errorMessage$: Observable<string> | undefined;
 
-  constructor(private store: Store, private userService: UsersService) { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
     this.loadUsers()
@@ -24,7 +24,7 @@ export class UsersShellComponent implements OnInit {
   loadUsers() {
     this.users$ = this.store.select(getUsers)
     this.errorMessage$ = this.store.select(getErrorMsg)
-    this.store.dispatch(UserPageActions.loadUsers())
+    this.store.dispatch(UserPageActions.loadUsers({}))
   }
 
   onDeleteUser(userId: string) {

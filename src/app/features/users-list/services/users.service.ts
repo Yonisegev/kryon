@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { User } from '../models/user';
@@ -13,7 +13,9 @@ export class UsersService {
   }
 
   public getUsers(searchText?: string): Observable<User[]> {
-    return this.http.get<User[]>(`${this.endpointUrl}/users`)
+    const httpParams: HttpParams = new HttpParams()
+      .set('fullName_like', searchText ? searchText : '')
+    return this.http.get<User[]>(`${this.endpointUrl}/users`, { params: httpParams })
   }
 
   public deleteUser(userId: string): Observable<string> {
