@@ -1,8 +1,8 @@
 <main class="users-list-container flex column">
-    <input type="search" class="search" name="search" placeholder="Search users">
+    <user-filter></user-filter>
     <ul class="user-list">
-        <li *ngFor="let user of users">
-            <user-preview [user]="user"></user-preview>
+        <li *ngFor="let user of users" hoverColor [userColor]="user.color">
+            <user-preview (deleteUser)="onDeleteUser($event)" [user]="user" ></user-preview>
         </li>
     </ul>
 </main>

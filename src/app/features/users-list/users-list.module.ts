@@ -9,12 +9,16 @@ import { StoreModule } from '@ngrx/store';
 import { userReducer } from './state/user.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './state/user.effects';
+import { HoverColorDirective } from './directives/hover-color.directive';
+import { UserFilterComponent } from './cmps/user-filter/user-filter.component';
 
 @NgModule({
   declarations: [
     UsersListComponent,
     UsersShellComponent,
-    UserPreviewComponent
+    UserPreviewComponent,
+    HoverColorDirective,
+    UserFilterComponent
   ],
   imports: [
     UsersListRoutingModule,

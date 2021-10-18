@@ -13,12 +13,10 @@ export class UsersService {
   }
 
   public getUsers(searchText?: string): Observable<User[]> {
-    // Todo: Implement request to mock server
     return this.http.get<User[]>(`${this.endpointUrl}/users`)
   }
 
-  public deleteUser(userId: string): Observable<void> {
-    // Todo: Implement request to mock server
-    return this.http.delete<void>(`${this.endpointUrl}/users`)
+  public deleteUser(userId: string): Observable<string> {
+    return this.http.delete<string>(`${this.endpointUrl}/users/${userId}`)
   }
 }

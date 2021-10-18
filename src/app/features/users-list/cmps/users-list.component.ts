@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { User } from '../models/user';
 
 @Component({
@@ -12,7 +12,11 @@ export class UsersListComponent implements OnInit {
   constructor() {}
 
   @Input() users: User[] | undefined;
-
+  @Output() deleteUser = new EventEmitter<string>()
   ngOnInit(): void {
+  }
+
+  onDeleteUser(userId: string) {
+    this.deleteUser.emit(userId) // Keep this component a presentational component
   }
 }

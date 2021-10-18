@@ -1,33 +1,6 @@
 {
   "users": [
     {
-      "id": "a9c4f378-e06b-4cb9-bf5c-74bde6a65c75",
-      "userName": "Shaniya.White",
-      "fullName": "Josephine Shanahan",
-      "gender": "male",
-      "age": 30,
-      "jobTitle": "Product Brand Assistant",
-      "color": "#2a1876"
-    },
-    {
-      "id": "f9a5a505-863f-40f9-b731-388ce3e2f533",
-      "userName": "Lucas99",
-      "fullName": "Maynard King",
-      "gender": "female",
-      "age": 13,
-      "jobTitle": "Dynamic Usability Executive",
-      "color": "#46597e"
-    },
-    {
-      "id": "996cd94d-47fc-45a6-9d07-b183b76a2bad",
-      "userName": "Shea_Borer",
-      "fullName": "Mrs. Jannie Sanford",
-      "gender": "male",
-      "age": 23,
-      "jobTitle": "Chief Branding Architect",
-      "color": "#411878"
-    },
-    {
       "id": "1bf58da9-b31e-4aed-a293-b7597e73f681",
       "userName": "Jacques_Roberts",
       "fullName": "Kristina Steuber",
@@ -73,15 +46,6 @@
       "color": "#45475f"
     },
     {
-      "id": "57da9a74-0752-48a3-a5fe-d2a3a4aff89a",
-      "userName": "Libby_Bode75",
-      "fullName": "Grayson Bednar",
-      "gender": "female",
-      "age": 25,
-      "jobTitle": "Investor Operations Consultant",
-      "color": "#3b0120"
-    },
-    {
       "id": "2aca5253-7580-4edb-b116-420dcc19aea9",
       "userName": "Mikel.Lakin",
       "fullName": "Jalen Kihn",
@@ -89,15 +53,6 @@
       "age": 26,
       "jobTitle": "Corporate Group Executive",
       "color": "#18047e"
-    },
-    {
-      "id": "19937e92-f714-42df-8352-c91408a0bd01",
-      "userName": "Jamarcus.Morissette",
-      "fullName": "Trudie Huels",
-      "gender": "male",
-      "age": 14,
-      "jobTitle": "Customer Branding Designer",
-      "color": "#754127"
     },
     {
       "id": "aae0584d-1521-41ec-a2dc-78a58d9ef91c",

@@ -1,7 +1,7 @@
-<div *ngIf="user" class="user-preview flex align-center">
+<div *ngIf="user"  class="user-preview flex align-center">
     <p class="user-info">{{user.fullName}} - {{user.age}} ({{userFiboAge}})</p>
     <div class="actions">
-        <i class="delete-icon"><img src="../../../../../assets/images/trash-alt-solid.svg"></i>
+        <i (click)="onDeleteUser()" class="delete-icon"><img src="../../../../../assets/images/trash-alt-solid.svg"></i>
         <i class="info-icon"><img src="../../../../../assets/images/plus-solid.svg"></i>
     </div>
 </div>

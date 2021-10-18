@@ -27,4 +27,8 @@ export class UsersShellComponent implements OnInit {
     this.store.dispatch(UserPageActions.loadUsers())
   }
 
+  onDeleteUser(userId: string) {
+    this.store.dispatch(UserPageActions.deleteUser({ userId }))
+  }
+
 }
