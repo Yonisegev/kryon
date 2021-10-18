@@ -1,6 +1,7 @@
 # Kryon - Yoni Segev
 
 Technologies used:
+
 Angular
 
 NGRX
