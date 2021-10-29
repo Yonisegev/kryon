@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { User } from '../../models/user';
 import { UsersService } from '../../services/users.service';
 @Component({
@@ -9,17 +8,23 @@ import { UsersService } from '../../services/users.service';
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.scss']
 })
-export class UserDetailsComponent implements OnInit {
+export class UserDetailsComponent implements OnInit, OnDestroy {
   user$: Observable<User | null> | undefined
-  constructor(private store: Store, private route: ActivatedRoute, private userService: UsersService) { }
+  currentUserId: string = ''
+  routeSub: Subscription | undefined
+  constructor(private route: ActivatedRoute, private userService: UsersService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      const userId = params.id
-      if (userId) {
-        this.user$ = this.userService.getUserById(userId)
+    this.routeSub = this.route.params.subscribe((params) => {
+      this.currentUserId = params.id
+      if (this.currentUserId) {
+        this.user$ = this.userService.getUserById(this.currentUserId)
       }
     })
+  }
+
+  ngOnDestroy() {
+    this.routeSub?.unsubscribe()
   }
 
   getUserAvatar(user: any) {

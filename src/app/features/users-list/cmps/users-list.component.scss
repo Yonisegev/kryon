@@ -12,6 +12,7 @@
         li {
             &:not(:last-of-type) {
                 border-bottom: 1px solid rgba(rgb(0, 0, 0), 0.12);
+                padding-top: 1px;
             }
             &:first-of-type {
                 border-top: 1px solid rgba(rgb(0, 0, 0), 0.12);

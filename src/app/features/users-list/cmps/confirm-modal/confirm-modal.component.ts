@@ -5,13 +5,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './confirm-modal.component.html',
   styleUrls: ['./confirm-modal.component.scss']
 })
-export class ConfirmModalComponent implements OnInit {
+export class ConfirmModalComponent {
   @Output() modalButtonClicked = new EventEmitter<boolean>()
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onModalAction(state: boolean) {
     this.modalButtonClicked.emit(state)

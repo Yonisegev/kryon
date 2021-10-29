@@ -4,6 +4,10 @@
     margin: 5px 0;
     padding: 0 5px;
 
+    &:hover {
+        color: #fff;
+    }
+
     .user-info {
         flex-grow: 1;
     }

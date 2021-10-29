@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { User } from '../../models/user';
 import { getCurrentUserId, getErrorMsg, getSearchValue, getUsers } from '../../state';
@@ -19,18 +19,26 @@ export class UsersShellComponent implements OnInit {
   isConfirmModalOpen: boolean = false;
   userIdToDelete: string = ''
   searchValue$: Observable<string> | undefined;
+  routeSub: Subscription | undefined
 
-  constructor(private store: Store, private router: Router) { }
+  constructor(private store: Store, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.loadUsers()
-  }
-
-  loadUsers() {
     this.users$ = this.store.select(getUsers)
     this.errorMessage$ = this.store.select(getErrorMsg)
     this.currentUserId$ = this.store.select(getCurrentUserId)
     this.searchValue$ = this.store.select(getSearchValue)
+    this.routeSub = this.route.firstChild?.params.subscribe((params) => {
+      this.store.dispatch(UserPageActions.setCurrentUserId({ userId: params.id ? params.id : '' }))
+    })
+  }
+
+  ngOnDestroy() {
+    this.routeSub?.unsubscribe()
+  }
+  
+  loadUsers() {
     this.store.dispatch(UserPageActions.loadUsers({}))
   }
 
@@ -45,11 +53,8 @@ export class UsersShellComponent implements OnInit {
     ).subscribe(currentUserId => {
       if (currentUserId === userId) {
         this.store.dispatch(UserPageActions.setCurrentUserId({ userId: '' }))
-        this.router.navigate(['/'])
-
       } else {
         this.store.dispatch(UserPageActions.setCurrentUserId({ userId }))
-        this.router.navigate(['/', userId])
       }
     })
   }

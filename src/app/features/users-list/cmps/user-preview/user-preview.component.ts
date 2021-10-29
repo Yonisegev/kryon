@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../models/user';
 import { fibonacci } from '../../fibonacci'
 
@@ -8,17 +8,13 @@ import { fibonacci } from '../../fibonacci'
   styleUrls: ['./user-preview.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserPreviewComponent implements OnInit {
-
-  constructor() { }
+export class UserPreviewComponent {
 
   @Input() user: User | undefined
   @Input() currentUserId: string | undefined | null
   @Input() searchValue: string | undefined | null
   @Output() deleteUser = new EventEmitter<string>()
   @Output() infoToggled = new EventEmitter<string>()
-  ngOnInit(): void {
-  }
 
   get userFiboAge() {
     if (this.user) {

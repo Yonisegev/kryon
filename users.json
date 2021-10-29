@@ -1,33 +1,6 @@
 {
   "users": [
     {
-      "id": "b9747553-f4a4-4e01-98ac-3e7c62252525",
-      "userName": "Kendra_Towne",
-      "fullName": "Floyd Cassin",
-      "gender": "female",
-      "age": 8,
-      "jobTitle": "Internal Configuration Analyst",
-      "color": "#590f73"
-    },
-    {
-      "id": "a832b984-7b3b-41b9-9248-95b270f49728",
-      "userName": "Merritt_Schiller82",
-      "fullName": "Haylie Stracke Jr.",
-      "gender": "female",
-      "age": 25,
-      "jobTitle": "Investor Communications Assistant",
-      "color": "#595736"
-    },
-    {
-      "id": "3a78e964-9b7a-4f7b-9341-7c2c5f64c9b2",
-      "userName": "Waldo.Hamill19",
-      "fullName": "Oswaldo Vandervort",
-      "gender": "female",
-      "age": 27,
-      "jobTitle": "Dynamic Optimization Administrator",
-      "color": "#543a31"
-    },
-    {
       "id": "151fd1e0-beb3-490d-a06c-8ff87024789b",
       "userName": "Raul_Schultz",
       "fullName": "Miss Wyman Frami",
@@ -35,15 +8,6 @@
       "age": 18,
       "jobTitle": "Senior Research Architect",
       "color": "#1d3828"
-    },
-    {
-      "id": "63db00d8-e55f-4883-8cf6-470d766e7a78",
-      "userName": "Aidan_Gerhold",
-      "fullName": "Mr. Thora Ziemann",
-      "gender": "male",
-      "age": 24,
-      "jobTitle": "Regional Usability Supervisor",
-      "color": "#444d35"
     },
     {
       "id": "216011d6-2cf0-4512-9eb4-13f375b454aa",
